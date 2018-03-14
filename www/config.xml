@@ -2,17 +2,17 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.danzen.tilty"
-        version   = "3.0.1">
+        id        = "com.benzette.imfirst"
+        version   = "1.0.0">
 
-    <name>Tilty</name>
+    <name>imfirst</name>
 
     <description>
-        Mobile game to keep your device level while jostling others!
+        My first mobile app
     </description>
 
-    <author href="http://danzen.com" email="support@danzen.com">
-       Dan Zen
+    <author href="http://benzette.com" email="benzette@gmail.com">
+       Nicole Benz
     </author>
 
     <!--
