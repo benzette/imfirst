@@ -5,10 +5,10 @@
         id        = "com.sheridan.imm.collective"
         version   = "1.0.0">
 
-    <name>imfirst</name>
+    <name>Marlow Marshmallow</name>
 
     <description>
-        My first mobile app
+        Help Marlow the Marshmallow collect graham crackers and chocolate to become a Smore. Tilt the screen to avoid the cacti!
     </description>
 
     <author href="http://benzette.com" email="benzette@gmail.com">
