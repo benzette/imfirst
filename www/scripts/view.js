@@ -19,6 +19,18 @@ var app = function(app) {
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page1);
         // put intro screen
+        var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
+        .pos(null, 10);
+
+        var instructionsDivider = new Rectangle(320, 4, "#0f616d")
+        .center(content)
+        .pos(null, 80);
+
+        var sentenceText = "Help Marlow the Marshmallow collect graham crackers and chocolate to become a S'more. Tilt the screen to avoid the cacti!";
+        var instructions = new Label({text:sentenceText, size: 38, color:"#fff", lineWidth:380})
+        .center(content)
+        .pos(null, 120);
+
 
 
         // ~~~~~~~  FOOTER ~~~~~~~~~~~
@@ -56,8 +68,11 @@ var app = function(app) {
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page2);
-        var mlogo = frame.asset("MarlowLogo.png")
-        .center(header);
+        // var mlogo = frame.asset("MarlowLogo.png")
+        // .center(header);
+
+    	var mlogo2 = mlogo.clone()
+    		.center(header);
 
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
@@ -225,7 +240,25 @@ var app = function(app) {
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page5);
-        // Hot to Cold Timer Bar
+
+        // // Level 1 Button
+        // var homeButtonLabel = v.homeButtonLabel = new Label({
+        //    text:"1",
+        //    size:40,
+        //    color:"#0f616d"
+        // });
+        //
+        // var homeButton = v.homeButton = new Button({
+        //    label:homeButtonLabel,
+        //    width:60,
+        //    height:60,
+        //    color:"#efde5d",
+        //    rollColor: "#0f616d",
+        //    corner:0.5
+        // });
+        // v.homeButton.addTo(header).pos(50, 100);
+        // // Hot to Cold Timer Bar
+
 
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
