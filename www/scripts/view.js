@@ -68,9 +68,6 @@ var app = function(app) {
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page2);
-        // var mlogo = frame.asset("MarlowLogo.png")
-        // .center(header);
-
     	var mlogo2 = mlogo.clone()
     		.center(header);
 
@@ -241,23 +238,24 @@ var app = function(app) {
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page5);
 
-        // // Level 1 Button
-        // var homeButtonLabel = v.homeButtonLabel = new Label({
-        //    text:"1",
-        //    size:40,
-        //    color:"#0f616d"
-        // });
-        //
-        // var homeButton = v.homeButton = new Button({
-        //    label:homeButtonLabel,
-        //    width:60,
-        //    height:60,
-        //    color:"#efde5d",
-        //    rollColor: "#0f616d",
-        //    corner:0.5
-        // });
-        // v.homeButton.addTo(header).pos(50, 100);
-        // // Hot to Cold Timer Bar
+
+        //Home Button
+        var homeButtonLabel = v.homeButtonLabel = new Label({
+           text:"<",
+           size:40,
+           color:"#0f616d"
+        });
+
+        var homeButton = v.homeButton = new Button({
+           label:homeButtonLabel,
+           width:60,
+           height:60,
+           color:"#efde5d",
+           rollColor: "#0f616d",
+           corner:0.5
+        });
+        v.homeButton.addTo(header).pos(0, 0);
+        // Hot to Cold Timer Bar
 
 
 
@@ -271,6 +269,8 @@ var app = function(app) {
         .addTo(content).pos(50, 100);
         var graham1 = frame.asset("graham.png")
         .addTo(content).pos(210, 770);
+        var graham2 = graham1.clone()
+        .addTo(content).pos(40, 770);
         var chocolate = frame.asset("chocolate.png")
         .addTo(content).pos(420,650);
 
@@ -291,33 +291,44 @@ var app = function(app) {
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page6);
-        var logo = new Label("MARLOW").center(header);
+
+
+        //Home Button
+        var homeButtonLabel2 = v.homeButtonLabel.clone();
+
+        var homeButton2 = v.homeButton2 = new Button({
+           label:homeButtonLabel2,
+           width:60,
+           height:60,
+           color:"#efde5d",
+           rollColor: "#0f616d",
+           corner:0.5
+        });
+        v.homeButton2.addTo(header).pos(0, 0);
 
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page6);
-        var circle = v.circle = new Circle(100, model.colors[0])
-            .center(content)
-            .cur();
-        circle.drag();
+        var cactus16 = cactus1.clone()
+        .center(content).pos(50, 360);
+        var cactus26 = cactus2.clone()
+        .center(content).pos(260, 500);
+        var marlow6 = marlow.clone()
+        .addTo(content).pos(50, 100);
+        var graham16 = graham1.clone()
+        .addTo(content).pos(210, 770);
+        var graham26 = graham1.clone()
+        .addTo(content).pos(50, 770);
+        var chocolate6 = chocolate.clone()
+        .addTo(content).pos(420,650);
 
-        // ~~~~~~~  FOOTER ~~~~~~~~~~~
-        var footer = v.button6 = new Button(200, 50, "Next").addTo(page6);
-        footer.selectedIndex = 1;
-
-                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
-                // var footer = v.tabs2 = new Tabs({
-                //     tabs:["home", "game"]
-                // }).addTo(page2);
-                // footer.selectedIndex = 1;
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
 
         var layout6 = v.layout6 = new Layout(page6,[
-            {object:header, marginTop:5, backgroundColor:frame.yellow},
             {object:content, marginTop:5},
             {object:footer, marginTop:5, maxWidth:90, minHeight:15}
-        ], 5, frame.grey, null, new Shape(), stage);
+        ], 5, "#7ACED6", null, new Shape(), stage);
         layoutManager.add(layout6);
 
 //----------------------------------------------------------------------------//
@@ -328,33 +339,44 @@ var app = function(app) {
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page7);
-        var logo = new Label("MARLOW").center(header);
+
+
+        //Home Button
+        var homeButtonLabel3 = v.homeButtonLabel.clone();
+
+        var homeButton3 = v.homeButton3 = new Button({
+           label:homeButtonLabel3,
+           width:60,
+           height:60,
+           color:"#efde5d",
+           rollColor: "#0f616d",
+           corner:0.5
+        });
+        v.homeButton3.addTo(header).pos(0, 0);
 
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page7);
-        var circle = v.circle = new Circle(100, model.colors[0])
-            .center(content)
-            .cur();
-        circle.drag();
+        var cactus17 = cactus1.clone()
+        .center(content).pos(50, 360);
+        var cactus27 = cactus2.clone()
+        .center(content).pos(260, 500);
+        var marlow7 = marlow.clone()
+        .addTo(content).pos(50, 100);
+        var graham17 = graham1.clone()
+        .addTo(content).pos(210, 770);
+        var graham27 = graham1.clone()
+        .addTo(content).pos(50, 770);
+        var chocolate7 = chocolate.clone()
+        .addTo(content).pos(420,650);
 
-        // ~~~~~~~  FOOTER ~~~~~~~~~~~
-        var footer = v.button7 = new Button(200, 50, "Next").addTo(page7);
-        footer.selectedIndex = 1;
-
-                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
-                // var footer = v.tabs2 = new Tabs({
-                //     tabs:["home", "game"]
-                // }).addTo(page2);
-                // footer.selectedIndex = 1;
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
 
         var layout7 = v.layout7 = new Layout(page7,[
-            {object:header, marginTop:5, backgroundColor:frame.yellow},
             {object:content, marginTop:5},
             {object:footer, marginTop:5, maxWidth:90, minHeight:15}
-        ], 5, frame.grey, null, new Shape(), stage);
+        ], 5, "#7ACED6", null, new Shape(), stage);
         layoutManager.add(layout7);
 
     }

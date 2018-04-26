@@ -39,7 +39,11 @@ frame.on("ready", function() {
 	frame.outerColor = "#1b91a3";
 	frame.color = "#1b91a3";
 
-	frame.loadAssets(["marlow.png", "graham.png", "chocolate.png", "cactus01.png", "cactus02.png", "cactus03.png", "cactus04.png", "MarlowLogo.png"], "assets/");
+	frame.loadAssets(["marlow.png", "graham.png", "chocolate.png",
+	"cactus01.png", "cactus02.png", "cactus03.png", "cactus04.png",
+	"cactus01big.png", "cactus02big.png", "cactus03big.png", "cactus04big.png",
+	"cactus01med.png", "cactus02med.png", "cactus03med.png", "cactus04med.png",
+	"MarlowLogo.png", "marlow-fail.png", "marlow-smore.png"], "assets/");
 	frame.on("complete", function(){
 
 	var layoutManager = new LayoutManager();
@@ -52,9 +56,9 @@ frame.on("ready", function() {
 		{page:view.page2, swipe:[view.page1, view.page1]},
 		{page:view.page3, swipe:[view.page1, view.page1]},
 		{page:view.page4, swipe:[view.page1, view.page1]},
-		{page:view.page5, swipe:[view.page1, view.page1]},
-		{page:view.page6, swipe:[view.page1, view.page1]},
-		{page:view.page7, swipe:[view.page1, view.page1]}
+		{page:view.page5},
+		{page:view.page6},
+		{page:view.page7}
 	], "slide", 400).addTo();
 
 	app.makeController(model, view, pages);
