@@ -140,7 +140,7 @@
 try
 {
   // Prompt user to select iTunesArtwork file. Clicking "Cancel" returns null.
-  var iTunesArtwork = File.openDialog("Select a sqaure PNG file that is at least 1024x1024.", "*.png", false);
+  var iTunesArtwork = File.openDialog("Select a square PNG file that is at least 1024x1024.", "*.png", false);
 
   if (iTunesArtwork !== null)
   {

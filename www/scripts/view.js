@@ -6,11 +6,14 @@ var app = function(app) {
         var v = this;
         zog(model.colors);
 
+        // PAGE 1 Instructions
+
         var page1 = v.page1 = new Container();
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page1);
-        var logo = new Label("PERFUME").center(header);
+        var mlogo = frame.asset("MarlowLogo.png")
+        .center(header);
 
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
@@ -19,53 +22,307 @@ var app = function(app) {
 
 
         // ~~~~~~~  FOOTER ~~~~~~~~~~~
-        var footer = v.tabs1 = new Tabs({
-            tabs:["home", "game"]
-        }).addTo(page1);
+        var label1 = v.label1 = new Label({
+           text:"Start",
+           size:14,
+           color:"white"
+        });
+
+        var footer = v.button1 = new Button({
+           label:label1,
+           width:100,
+           height:26,
+           color:"#7ACED6",
+           rollColor: "#0f616d",
+           corner:0
+        });
+        v.button1.addTo(page1);
+
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
 
         var layout1 = v.layout1 = new Layout(page1,[
-            {object:header, marginTop:5, backgroundColor:frame.yellow},
-            {object:content, marginTop:5, backgroundColor:frame.green},
+            {object:header, marginTop:5, backgroundColor: "#0f616d"},
+            {object:content, marginTop:5},
             {object:footer, marginTop:5, maxWidth:90, minHeight:15}
-        ], 5, frame.grey, null, new Shape(), stage);
+        ], 5, "#1b91a3", null, new Shape(), stage);
         layoutManager.add(layout1);
 
+//----------------------------------------------------------------------------//
 
-
-
-        // PAGE 2
+        // PAGE 2 Choose a Level
 
         var page2 = v.page2 = new Container();
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page2);
-        var logo = new Label("PERFUME").center(header);
+        var mlogo = frame.asset("MarlowLogo.png")
+        .center(header);
 
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page2);
+        var chooseLevel = new Label("Choose a Level:", 36, null, "white").center(content)
+        .pos(null, 10);
+
+        // Level 1 Button
+        var lvl1ButtonLabel = v.lvl1ButtonLabel = new Label({
+           text:"1",
+           size:60,
+           color:"#0f616d"
+        });
+
+        var lvl1Button = v.lvl1Button = new Button({
+           label:lvl1ButtonLabel,
+           width:120,
+           height:120,
+           color:"#efde5d",
+           rollColor: "#0f616d",
+           corner:0.5
+        });
+        v.lvl1Button.addTo(content).pos(50, 100);
+
+        // Level 2 Button
+        var lvl2ButtonLabel = v.lvl2ButtonLabel = new Label({
+           text:"2",
+           size:60,
+           color:"#0f616d"
+        });
+
+        var lvl2Button = v.lvl2Button = new Button({
+           label:lvl2ButtonLabel,
+           width:120,
+           height:120,
+           color:"#efde5d",
+           rollColor: "#0f616d",
+           corner:0
+        });
+        v.lvl2Button.addTo(content).pos(190, 100);
+
+        // Level 3 Button
+        var lvl3ButtonLabel = v.lvl3ButtonLabel = new Label({
+           text:"3",
+           size:60,
+           color:"#0f616d"
+        });
+
+        var lvl3Button = v.lvl3Button = new Button({
+           label:lvl3ButtonLabel,
+           width:120,
+           height:120,
+           color:"#efde5d",
+           rollColor: "#0f616d",
+           corner:0
+        });
+        v.lvl3Button.addTo(content).pos(330, 100);
+
+
+        // ~~~~~~~  FOOTER ~~~~~~~~~~~
+        // var label2 = v.label2 = new Label({
+        //    text:"Instructions",
+        //    size:10,
+        //    color:"white"
+        // });
+        //
+        // var footer = v.button2 = new Button({
+        //    label:label2,
+        //    width:100,
+        //    height:30,
+        //    color:"#7ACED6",
+        //    rollColor: "#0f616d",
+        //    corner:0
+        // });
+        // v.button2.addTo(page2);
+
+        // ~~~~~~~  LAYOUT ~~~~~~~~~~~
+
+        var layout2 = v.layout2 = new Layout(page2,[
+            {object:header, marginTop:5, backgroundColor: "#0f616d"},
+            {object:content, marginTop:5},
+            {object:footer, marginTop:5, maxWidth:90, minHeight:15}
+        ], 5, "#1b91a3", null, new Shape(), stage);
+        layoutManager.add(layout2);
+
+//----------------------------------------------------------------------------//
+
+        // PAGE 3 Success
+
+        var page3 = v.page3 = new Container();
+
+        // ~~~~~~~  HEADER ~~~~~~~~~~~
+        var header = new Container(500,100).addTo(page3);
+        var logo = new Label("MARLOW").center(header);
+
+
+        // ~~~~~~~  CONTENT ~~~~~~~~~~~
+        var content = new Container(500,500).addTo(page3);
         var circle = v.circle = new Circle(100, model.colors[0])
             .center(content)
             .cur();
         circle.drag();
 
         // ~~~~~~~  FOOTER ~~~~~~~~~~~
-        var footer = v.tabs2 = new Tabs({
-            tabs:["home", "game"]
-        }).addTo(page2);
+        var footer = v.button3 = new Button(200, 50, "Next").addTo(page3);
         footer.selectedIndex = 1;
+
+                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
+                // var footer = v.tabs2 = new Tabs({
+                //     tabs:["home", "game"]
+                // }).addTo(page2);
+                // footer.selectedIndex = 1;
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
 
-        var layout2 = v.layout2 = new Layout(page2,[
+        var layout3 = v.layout3 = new Layout(page3,[
             {object:header, marginTop:5, backgroundColor:frame.yellow},
             {object:content, marginTop:5},
             {object:footer, marginTop:5, maxWidth:90, minHeight:15}
         ], 5, frame.grey, null, new Shape(), stage);
-        layoutManager.add(layout2);
+        layoutManager.add(layout3);
 
+//----------------------------------------------------------------------------//
+
+        // PAGE 4 Fail
+
+        var page4 = v.page4 = new Container();
+
+        // ~~~~~~~  HEADER ~~~~~~~~~~~
+        var header = new Container(500,100).addTo(page4);
+        var logo = new Label("MARLOW").center(header);
+
+
+        // ~~~~~~~  CONTENT ~~~~~~~~~~~
+        var content = new Container(500,500).addTo(page4);
+        var circle = v.circle = new Circle(100, model.colors[0])
+            .center(content)
+            .cur();
+        circle.drag();
+
+        // ~~~~~~~  FOOTER ~~~~~~~~~~~
+        var footer = v.button4 = new Button(200, 50, "Next").addTo(page4);
+        footer.selectedIndex = 1;
+
+                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
+                // var footer = v.tabs2 = new Tabs({
+                //     tabs:["home", "game"]
+                // }).addTo(page2);
+                // footer.selectedIndex = 1;
+
+        // ~~~~~~~  LAYOUT ~~~~~~~~~~~
+
+        var layout4 = v.layout4 = new Layout(page4,[
+            {object:header, marginTop:5, backgroundColor:frame.yellow},
+            {object:content, marginTop:5},
+            {object:footer, marginTop:5, maxWidth:90, minHeight:15}
+        ], 5, frame.grey, null, new Shape(), stage);
+        layoutManager.add(layout3);
+
+//----------------------------------------------------------------------------//
+
+        // PAGE 5 Level 1
+
+        var page5 = v.page5 = new Container();
+
+        // ~~~~~~~  HEADER ~~~~~~~~~~~
+        var header = new Container(500,100).addTo(page5);
+        // Hot to Cold Timer Bar
+
+
+        // ~~~~~~~  CONTENT ~~~~~~~~~~~
+        var content = new Container(500,500).addTo(page5);
+        var cactus1 = frame.asset("cactus01.png")
+        .center(content).pos(50, 360);
+        var cactus2 = frame.asset("cactus02.png")
+        .center(content).pos(260, 500);
+        var marlow = frame.asset("marlow.png")
+        .addTo(content).pos(50, 100);
+        var graham1 = frame.asset("graham.png")
+        .addTo(content).pos(210, 770);
+        var chocolate = frame.asset("chocolate.png")
+        .addTo(content).pos(420,650);
+
+
+        // ~~~~~~~  LAYOUT ~~~~~~~~~~~
+
+        var layout5 = v.layout5 = new Layout(page5,[
+            {object:content, marginTop:5},
+            {object:footer, marginTop:5, maxWidth:90, minHeight:15}
+        ], 5, "#7ACED6", null, new Shape(), stage);
+        layoutManager.add(layout5);
+
+//----------------------------------------------------------------------------//
+
+        // PAGE 6 Level 2
+
+        var page6 = v.page6 = new Container();
+
+        // ~~~~~~~  HEADER ~~~~~~~~~~~
+        var header = new Container(500,100).addTo(page6);
+        var logo = new Label("MARLOW").center(header);
+
+
+        // ~~~~~~~  CONTENT ~~~~~~~~~~~
+        var content = new Container(500,500).addTo(page6);
+        var circle = v.circle = new Circle(100, model.colors[0])
+            .center(content)
+            .cur();
+        circle.drag();
+
+        // ~~~~~~~  FOOTER ~~~~~~~~~~~
+        var footer = v.button6 = new Button(200, 50, "Next").addTo(page6);
+        footer.selectedIndex = 1;
+
+                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
+                // var footer = v.tabs2 = new Tabs({
+                //     tabs:["home", "game"]
+                // }).addTo(page2);
+                // footer.selectedIndex = 1;
+
+        // ~~~~~~~  LAYOUT ~~~~~~~~~~~
+
+        var layout6 = v.layout6 = new Layout(page6,[
+            {object:header, marginTop:5, backgroundColor:frame.yellow},
+            {object:content, marginTop:5},
+            {object:footer, marginTop:5, maxWidth:90, minHeight:15}
+        ], 5, frame.grey, null, new Shape(), stage);
+        layoutManager.add(layout6);
+
+//----------------------------------------------------------------------------//
+
+        // PAGE 7 Level 3
+
+        var page7 = v.page7 = new Container();
+
+        // ~~~~~~~  HEADER ~~~~~~~~~~~
+        var header = new Container(500,100).addTo(page7);
+        var logo = new Label("MARLOW").center(header);
+
+
+        // ~~~~~~~  CONTENT ~~~~~~~~~~~
+        var content = new Container(500,500).addTo(page7);
+        var circle = v.circle = new Circle(100, model.colors[0])
+            .center(content)
+            .cur();
+        circle.drag();
+
+        // ~~~~~~~  FOOTER ~~~~~~~~~~~
+        var footer = v.button7 = new Button(200, 50, "Next").addTo(page7);
+        footer.selectedIndex = 1;
+
+                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
+                // var footer = v.tabs2 = new Tabs({
+                //     tabs:["home", "game"]
+                // }).addTo(page2);
+                // footer.selectedIndex = 1;
+
+        // ~~~~~~~  LAYOUT ~~~~~~~~~~~
+
+        var layout7 = v.layout7 = new Layout(page7,[
+            {object:header, marginTop:5, backgroundColor:frame.yellow},
+            {object:content, marginTop:5},
+            {object:footer, marginTop:5, maxWidth:90, minHeight:15}
+        ], 5, frame.grey, null, new Shape(), stage);
+        layoutManager.add(layout7);
 
     }
 

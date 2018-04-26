@@ -5,7 +5,7 @@
         id        = "com.sheridan.imm.collective"
         version   = "1.0.0">
 
-    <name>Marlow Marshmallow</name>
+    <name>Marlow</name>
 
     <description>
         Help Marlow the Marshmallow collect graham crackers and chocolate to become a Smore. Tilt the screen to avoid the cacti!

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>ZIM MVC App Advanced</title>
+<title>Marlow</title>
 
 <!-- Welcome to ZIM at http://zimjs.com - Code Interactive Media Pizzazz! 	        -->
 <!-- ZIM runs on the HTML Canvas powered by JavaScript and CreateJS http://createjs.com -->
@@ -21,7 +21,6 @@
 <script src="scripts/view.js"></script>
 <script src="scripts/controller.js"></script>
 
-
 <script>
 
 var stage;
@@ -36,23 +35,30 @@ frame.on("ready", function() {
     stageW = frame.width;
     stageH = frame.height;
 
-    frame.outerColor = "#444";
-    frame.color = "#ddd";
+	frame.outerColor = "#1b91a3";
+	frame.color = "#1b91a3";
+
+	frame.loadAssets(["marlow.png", "graham.png", "chocolate.png", "cactus01.png", "cactus02.png", "cactus03.png", "cactus04.png", "MarlowLogo.png"], "assets/");
+	frame.on("complete", function(){
 
 	var layoutManager = new LayoutManager();
 
     var model = new app.Model();
-    // zog(model.colors);
     var view = new app.View(model, layoutManager);
 
     var pages = new Pages([
 		{page:view.page1, swipe:[view.page2, view.page2]},
-		{page:view.page2, swipe:[view.page1, view.page1]}
-	], "slide", 1000).addTo();
+		{page:view.page2, swipe:[view.page1, view.page1]},
+		{page:view.page3, swipe:[view.page1, view.page1]},
+		{page:view.page4, swipe:[view.page1, view.page1]},
+		{page:view.page5, swipe:[view.page1, view.page1]},
+		{page:view.page6, swipe:[view.page1, view.page1]},
+		{page:view.page7, swipe:[view.page1, view.page1]}
+	], "slide", 400).addTo();
 
 	app.makeController(model, view, pages);
 
-	// layoutManager.dispose();
+	layoutManager.dispose();
 
 
 	frame.on("resize", resize);
@@ -64,9 +70,15 @@ frame.on("ready", function() {
 		// view.layout2.resize();
 	}
 
+		stage.update();
+
     stage.update(); // this is needed to show any changes
 
+	}); //end of asset loading
+
 }); // end of ready
+
+
 
 </script>
 
