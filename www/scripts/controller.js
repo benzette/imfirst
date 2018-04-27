@@ -46,8 +46,8 @@ var app = function(app) {
         var aY = 0;
 
         frame.on("deviceorientation", function (e) {
-            aX = e.rotation.x;
-            aY = e.rotation.y;
+            aX = e.rotation.y;
+            aY = e.rotation.x;
         });
 
         Ticker.add(function(){
@@ -63,8 +63,8 @@ var app = function(app) {
             if (v.marlow.y < 5) {
                 v.marlow.y = 5;
             }
-            v.marlow.x += aX;
-            v.marlow.y += aY;
+            v.marlow.x += aX*0.8;
+            v.marlow.y += aY*0.8;
             // v.marlow.z += e.acceleration.z*3;
             stage.update();
         })
