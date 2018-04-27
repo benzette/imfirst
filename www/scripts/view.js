@@ -26,14 +26,14 @@ var app = function(app) {
        .center(content)
        .drag();
 
-       frame.on("devicemotion", function (e) {
-           label.text = "x = "+decimals(e.acceleration.x)+" y = "+decimals(e.acceleration.y);
+       frame.on("deviceorientation", function (e) {
+           label.text = "x = "+decimals(e.rotation.x)+" y = "+decimals(e.rotation.y);
            stage.update();
        });
 
 
 
-// 
+//
 // interval(50, function(obj){
 //     label.text = obj.count;
 //     stage.update();
