@@ -261,7 +261,7 @@ var app = function(app) {
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page5);
-        var marlow = frame.asset("marlow.png")
+        var marlow = v.marlow = frame.asset("marlow.png")
         .addTo(content).pos(50, 100).drag();
         var cactus1 = frame.asset("cactus01med.png")
         .center(content).pos(-50, 210).sca(0.7);
@@ -274,13 +274,43 @@ var app = function(app) {
         var chocolate = frame.asset("chocolate.png")
         .addTo(content).pos(420, 630);
 
+        var itemSuccess = 0;
+        var hitCheck = false;
+
         marlow.on("pressmove", function() {
-           if (marlow.hitTestBounds(cactus1)) {
-              zog("hit!")
-              // stage.update();
+            if (hitCheck) return;
+
+           if (cactus1.hitTestRect(marlow)) {
+              zog("Ouch!")
+              // GO TO FAIL PAGE
+              hitCheck = true;
+              pages.go(v.page4);
+           }
+           if (cactus2.hitTestRect(marlow)) {
+              zog("Ouch!")
+              // GO TO FAIL PAGE
+              // v.go(v.page4);
+           }
+           if (marlow.hitTestBounds(graham1)) {
+              zog("yum!")
+              graham1.alp(0);
+              itemSuccess += 1;
+           }
+           if (marlow.hitTestBounds(graham2)) {
+              zog("yum!")
+              graham2.alp(0);
+              itemSuccess += 1;
+           }
+           if (marlow.hitTestBounds(chocolate)) {
+              zog("yum chocolate!")
+              chocolate.alp(0);
+              itemSuccess += 1;
+           }
+           if (itemSuccess == 3) {
+               zog("Collection Success!")
+               // GO TO SUCCESS PAGE
            }
         });
-
 
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~

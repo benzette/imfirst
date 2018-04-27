@@ -27,6 +27,7 @@
 var stage;
 var stageW;
 var stageH;
+var pages;
 
 var frame = new Frame();
 frame.on("ready", function() {
@@ -51,7 +52,7 @@ frame.on("ready", function() {
     var model = new app.Model();
     var view = new app.View(model, layoutManager);
 
-    var pages = new Pages([
+    pages = new Pages([
 		{page:view.page1, swipe:[view.page2, view.page2]},
 		{page:view.page2, swipe:[view.page1, view.page1]},
 		{page:view.page3, swipe:[view.page1, view.page1]},

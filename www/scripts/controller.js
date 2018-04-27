@@ -42,6 +42,13 @@ var app = function(app) {
             v.lvl3Button.selectedIndex = 4;
         });
 
+        frame.on("devicemotion", function (e) {
+            v.marlow.x += e.accelleration.x;
+            v.marlow.y += e.accelleration.y;
+            stage.update();
+
+        });
+
     }
 
     return app;
