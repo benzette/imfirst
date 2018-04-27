@@ -57,8 +57,8 @@ var app = function(app) {
                 v.marlow.y = 5;
             }
             v.marlow.x += e.acceleration.x*3;
-            // v.marlow.y += e.acceleration.y*3;
-            v.marlow.z += e.acceleration.z*3;
+            v.marlow.y += e.acceleration.y*3;
+            // v.marlow.z += e.acceleration.z*3;
             stage.update();
 
         });
