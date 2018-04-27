@@ -22,14 +22,14 @@ var app = function(app) {
 
         var label = new Label({text:"100", align:"center", color:"white"}).center(content);
 
-        new Circle(100, "orange")
-       .center(content)
-       .drag();
+       //  new Circle(100, "orange")
+       // .center(content)
+       // .drag();
 
-       frame.on("deviceorientation", function (e) {
-           label.text = "x = "+decimals(e.rotation.x)+" y = "+decimals(e.rotation.y);
-           stage.update();
-       });
+       // frame.on("deviceorientation", function (e) {
+       //     label.text = "x = "+decimals(e.rotation.x)+" y = "+decimals(e.rotation.y);
+       //     stage.update();
+       // });
 
 
 
@@ -39,18 +39,18 @@ var app = function(app) {
 //     stage.update();
 // })
 
-        //
-        // var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
-        // .pos(null, 10);
-        //
-        // var instructionsDivider = new Rectangle(320, 4, "#0f616d")
-        // .center(content)
-        // .pos(null, 80);
-        //
-        // var sentenceText = "Help Marlow the Marshmallow collect graham crackers and chocolate to become a S'more. Tilt the screen to avoid the cacti!";
-        // var instructions = new Label({text:sentenceText, size: 38, color:"#fff", lineWidth:380})
-        // .center(content)
-        // .pos(null, 120);
+
+        var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
+        .pos(null, 10);
+
+        var instructionsDivider = new Rectangle(320, 4, "#0f616d")
+        .center(content)
+        .pos(null, 80);
+
+        var sentenceText = "Help Marlow the Marshmallow collect graham crackers and chocolate to become a S'more. Tilt the screen to avoid the cacti!";
+        var instructions = new Label({text:sentenceText, size: 38, color:"#fff", lineWidth:380})
+        .center(content)
+        .pos(null, 120);
 
 
 

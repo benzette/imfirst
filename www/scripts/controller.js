@@ -42,32 +42,32 @@ var app = function(app) {
             v.lvl3Button.selectedIndex = 4;
         });
 
-        // var aX = 0;
-        // var aY = 0;
-        //
-        // frame.on("devicemotion", function (e) {
-        //     aX = e.acceleration.x;
-        //     aY = e.acceleration.y;
-        // });
-        //
-        // Ticker.add(function(){
-        //     if (v.marlow.x > stage.width-5) {
-        //         v.marlow.x = stage.width-5;
-        //     }
-        //     if (v.marlow.x < 5) {
-        //         v.marlow.x = 5;
-        //     }
-        //     if (v.marlow.y > stage.height-5) {
-        //         v.marlow.y = stage.height-5;
-        //     }
-        //     if (v.marlow.y < 5) {
-        //         v.marlow.y = 5;
-        //     }
-        //     v.marlow.x += aX*30;
-        //     v.marlow.y += aY*30;
-        //     // v.marlow.z += e.acceleration.z*3;
-        //     stage.update();
-        // })
+        var aX = 0;
+        var aY = 0;
+
+        frame.on("deviceorientation", function (e) {
+            aX = e.rotation.x;
+            aY = e.rotation.y;
+        });
+
+        Ticker.add(function(){
+            if (v.marlow.x > stage.width-5) {
+                v.marlow.x = stage.width-5;
+            }
+            if (v.marlow.x < 5) {
+                v.marlow.x = 5;
+            }
+            if (v.marlow.y > stage.height-5) {
+                v.marlow.y = stage.height-5;
+            }
+            if (v.marlow.y < 5) {
+                v.marlow.y = 5;
+            }
+            v.marlow.x += aX*5;
+            v.marlow.y += aY*5;
+            // v.marlow.z += e.acceleration.z*3;
+            stage.update();
+        })
 
     }
 
