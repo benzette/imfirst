@@ -261,18 +261,26 @@ var app = function(app) {
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page5);
-        var cactus1 = frame.asset("cactus01.png")
-        .center(content).pos(50, 360);
-        var cactus2 = frame.asset("cactus02.png")
-        .center(content).pos(260, 500);
         var marlow = frame.asset("marlow.png")
-        .addTo(content).pos(50, 100);
+        .addTo(content).pos(50, 100).drag();
+        var cactus1 = frame.asset("cactus01med.png")
+        .center(content).pos(-50, 210).sca(0.7);
+        var cactus2 = frame.asset("cactus02med.png")
+        .center(content).pos(230, 430).sca(0.6);
         var graham1 = frame.asset("graham.png")
-        .addTo(content).pos(210, 770);
+        .addTo(content).pos(180, 770);
         var graham2 = graham1.clone()
-        .addTo(content).pos(40, 770);
+        .addTo(content).pos(230, 640);
         var chocolate = frame.asset("chocolate.png")
-        .addTo(content).pos(420,650);
+        .addTo(content).pos(420, 630);
+
+        marlow.on("pressmove", function() {
+           if (marlow.hitTestBounds(cactus1)) {
+              zog("hit!")
+              // stage.update();
+           }
+        });
+
 
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
@@ -310,17 +318,21 @@ var app = function(app) {
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page6);
         var cactus16 = cactus1.clone()
-        .center(content).pos(50, 360);
+        .center(content).pos(100, 410).sca(0.6).rot(-90);
         var cactus26 = cactus2.clone()
-        .center(content).pos(260, 500);
+        .center(content).pos(290, 500);
+        var cactus3 = frame.asset("cactus03med.png")
+        .center(content).pos(250, 460).sca(0.6).rot(90);
+        var cactus4 = frame.asset("cactus04med.png")
+        .center(content).pos(80, 690).sca(0.6);
         var marlow6 = marlow.clone()
         .addTo(content).pos(50, 100);
         var graham16 = graham1.clone()
-        .addTo(content).pos(210, 770);
+        .addTo(content).pos(290, 480);
         var graham26 = graham1.clone()
-        .addTo(content).pos(50, 770);
+        .addTo(content).pos(20, 770);
         var chocolate6 = chocolate.clone()
-        .addTo(content).pos(420,650);
+        .addTo(content).pos(260,700);
 
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
@@ -358,17 +370,25 @@ var app = function(app) {
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page7);
         var cactus17 = cactus1.clone()
-        .center(content).pos(50, 360);
+        .center(content).pos(370, 450).sca(.5);
         var cactus27 = cactus2.clone()
-        .center(content).pos(260, 500);
+        .center(content).pos(130, 300).rot(-90);
+        var cactus37 = cactus3.clone()
+        .center(content).pos(120, 540).rot(0).sca(.7);
+        var cactus372 = cactus3.clone()
+        .center(content).pos(240, 420).rot(-90).sca(.6);
+        var cactus47 = cactus4.clone()
+        .center(content).pos(180, 660);
+        var cactus472 = cactus4.clone()
+        .center(content).pos(80, 460).rot(90);
         var marlow7 = marlow.clone()
         .addTo(content).pos(50, 100);
         var graham17 = graham1.clone()
-        .addTo(content).pos(210, 770);
+        .addTo(content).pos(350, 770);
         var graham27 = graham1.clone()
-        .addTo(content).pos(50, 770);
+        .addTo(content).pos(40, 770);
         var chocolate7 = chocolate.clone()
-        .addTo(content).pos(420,650);
+        .addTo(content).pos(280,550);
 
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
