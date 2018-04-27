@@ -74,8 +74,8 @@ var app = function(app) {
         var hitCheck = false;
 
         Ticker.add(function(){
-            v.marlow.x += aX*0.6;
-            v.marlow.y += aY*0.6;
+            v.marlow.x += aX*0.4;
+            v.marlow.y += aY*0.4;
 
             if (v.marlow.x > stage.width-5) {
                 v.marlow.x = stage.width-5;
