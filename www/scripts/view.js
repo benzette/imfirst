@@ -252,15 +252,15 @@ var app = function(app) {
         var marlow = v.marlow = frame.asset("marlow.png")
         .centerReg(content, null, false).pos(50, 100).drag();
         var cactus1 = v.cactus1 = frame.asset("cactus01med.png")
-        .center(content).pos(-20, 210).sca(0.6);
+        .center(content).pos(-20, 310).sca(0.6);
         var cactus2 = v.cactus2 = frame.asset("cactus02med.png")
-        .center(content).pos(230, 460).sca(0.5);
+        .center(content).pos(260, 560).sca(0.5);
         var graham1 = v.graham1 = frame.asset("graham.png")
         .addTo(content).pos(180, 770);
         var graham2 = v.graham2 = graham1.clone()
-        .addTo(content).pos(230, 640);
+        .addTo(content).pos(200, 620);
         var chocolate = v.chocolate = frame.asset("chocolate.png")
-        .addTo(content).pos(420, 630);
+        .addTo(content).pos(420, 680);
 
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
