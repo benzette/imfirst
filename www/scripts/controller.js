@@ -50,8 +50,8 @@ var app = function(app) {
             if (v.marlow.x < 5) {
                 v.marlow.x = 5;
             }
-            if (v.marlow.y > stage.width-5) {
-                v.marlow.y = stage.width-5;
+            if (v.marlow.y > stage.height-5) {
+                v.marlow.y = stage.height-5;
             }
             if (v.marlow.y < 5) {
                 v.marlow.y = 5;
