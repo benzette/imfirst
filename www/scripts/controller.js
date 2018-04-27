@@ -43,9 +43,9 @@ var app = function(app) {
         });
 
         frame.on("devicemotion", function (e) {
-            v.marlow.x += e.acceleration.x*5;
-            v.marlow.y += e.acceleration.y*5;
-            v.marlow.z += e.acceleration.z*5;
+            v.marlow.x += e.acceleration.x;
+            v.marlow.y += e.acceleration.y;
+            v.marlow.z += e.acceleration.z;
             stage.update();
 
         });
