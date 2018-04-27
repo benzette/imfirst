@@ -228,6 +228,7 @@ var app = function(app) {
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page5);
 
+
         //Home Button
         var homeButtonLabel = v.homeButtonLabel = new Label({
            text:"<",
@@ -254,12 +255,12 @@ var app = function(app) {
         .center(content).pos(-20, 310).sca(0.6);
         var cactus2 = v.cactus2 = frame.asset("cactus02med.png")
         .center(content).pos(260, 560).sca(0.5);
-        var graham1 = v.graham1 = frame.asset("graham.png");
-        // .addTo(content, null, false).pos(180, 770);
-        var graham2 = v.graham2 = graham1.clone();
-        // .addTo(content, null, false).pos(200, 620);
-        var chocolate = v.chocolate = frame.asset("chocolate.png");
-        // .addTo(content, null, false).pos(420, 680);
+        var graham1 = v.graham1 = frame.asset("graham.png")
+        .addTo(content).pos(180, 770);
+        var graham2 = v.graham2 = graham1.clone()
+        .addTo(content).pos(200, 620);
+        var chocolate = v.chocolate = frame.asset("chocolate.png")
+        .addTo(content).pos(420, 680);
 
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~

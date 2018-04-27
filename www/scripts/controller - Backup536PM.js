@@ -25,19 +25,16 @@ var app = function(app) {
         v.homeButton.on("mousedown", function() {
             p.go(v.page2);
             v.homeButton.selectedIndex = 2;
-            v.marlow.removeFrom();
         });
 
         v.homeButton2.on("mousedown", function() {
             p.go(v.page2);
             v.homeButton2.selectedIndex = 2;
-            v.marlow.removeFrom();
         });
 
         v.homeButton3.on("mousedown", function() {
             p.go(v.page2);
             v.homeButton3.selectedIndex = 2;
-            v.marlow.removeFrom();
         });
 
         v.lvl1Button.on("mousedown", function() {
@@ -68,21 +65,9 @@ var app = function(app) {
         p.on("pagetransitioned", function(){
             if (p.page == v.page5){
                 v.marlow.pos(stageW/2, 120, stage).sca(0.6);
-                v.graham1.pos(140, 570, stage).sca(0.7);
-                v.graham2.pos(160, 420, stage).sca(0.7);
-                v.chocolate.pos(320, 480, stage).sca(0.7);
-
                 zog("hello");
                 stage.update();
             }
-            if (p.lastPage == v.page5) {
-                hitCheck = false;
-                itemSuccess = 0;
-                if (v.chocolate.parent) v.chocolate.removeFrom();
-                if (v.graham1.parent) v.graham1.removeFrom();
-                if (v.graham2.parent) v.graham2.removeFrom();
-            }
-
         });
 
         var itemSuccess = 0;
@@ -114,9 +99,6 @@ var app = function(app) {
               hitCheck = true;
               pages.go(v.page4);
               v.marlow.removeFrom();
-              if (v.chocolate.parent) v.chocolate.removeFrom();
-              if (v.graham1.parent) v.graham1.removeFrom();
-              if (v.graham2.parent) v.graham2.removeFrom();
            }
            if (v.cactus2.hitTestRect(v.marlow)) {
               zog("Ouch!")
@@ -126,17 +108,18 @@ var app = function(app) {
            }
            if (v.graham1.hitTestBounds(v.marlow)) {
               zog("yum!")
-              if (v.graham1.parent) v.graham1.removeFrom();
+               v.graham1.removeFrom();
               itemSuccess += 1;
            }
            if (v.graham2.hitTestRect(v.marlow)) {
               zog("yum!")
-              if (v.graham2.parent) v.graham2.removeFrom();
+              v.graham2.removeFrom();
               itemSuccess += 1;
            }
            if (v.chocolate.hitTestBounds(v.marlow)) {
               zog("yum chocolate!")
-              if (v.chocolate.parent) v.chocolate.removeFrom();
+              v.chocolate.removeFrom();
+              // v.chocolate.alp(0);
               itemSuccess += 1;
            }
            if (itemSuccess == 3) {
