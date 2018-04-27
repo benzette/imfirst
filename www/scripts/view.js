@@ -289,19 +289,20 @@ var app = function(app) {
            if (cactus2.hitTestRect(marlow)) {
               zog("Ouch!")
               // GO TO FAIL PAGE
-              // v.go(v.page4);
+              hitCheck = true;
+              pages.go(v.page4);
            }
-           if (marlow.hitTestBounds(graham1)) {
+           if (graham1.hitTestBounds(marlow)) {
               zog("yum!")
               graham1.alp(0);
               itemSuccess += 1;
            }
-           if (marlow.hitTestBounds(graham2)) {
+           if (graham2.hitTestRect(marlow)) {
               zog("yum!")
               graham2.alp(0);
               itemSuccess += 1;
            }
-           if (marlow.hitTestBounds(chocolate)) {
+           if (chocolate.hitTestBounds(marlow)) {
               zog("yum chocolate!")
               chocolate.alp(0);
               itemSuccess += 1;
