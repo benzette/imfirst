@@ -277,6 +277,10 @@ var app = function(app) {
         var itemSuccess = 0;
         var hitCheck = false;
 
+        timeout(1000, function(){
+            zog(marlow.parent.y)
+        })
+
         marlow.on("pressmove", function() {
             if (hitCheck) return;
 
@@ -317,7 +321,7 @@ var app = function(app) {
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
 
         var layout5 = v.layout5 = new Layout(page5,[
-            {object:content, marginTop:5},
+            {object:content, marginTop:0},
             // {object:footer, marginTop:5, maxWidth:90, minHeight:15}
         ], 5, "#7ACED6", null, new Shape(), stage);
         layoutManager.add(layout5);

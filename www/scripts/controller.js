@@ -42,8 +42,15 @@ var app = function(app) {
             v.lvl3Button.selectedIndex = 4;
         });
 
-        frame.on("devicemotion", function (e) {
+        var aX = 0;
+        var aY = 0;
 
+        frame.on("devicemotion", function (e) {
+            aX = e.acceleration.x;
+            yX = e.acceleration.y;
+        });
+
+        Ticker.add(function(){
             if (v.marlow.x > stage.width-5) {
                 v.marlow.x = stage.width-5;
             }
@@ -56,12 +63,11 @@ var app = function(app) {
             if (v.marlow.y < 5) {
                 v.marlow.y = 5;
             }
-            v.marlow.x += e.acceleration.x*3;
-            v.marlow.y += e.acceleration.y*3;
+            v.marlow.x += aX*3;
+            v.marlow.y += aY*3;
             // v.marlow.z += e.acceleration.z*3;
             stage.update();
-
-        });
+        })
 
     }
 
