@@ -63,8 +63,8 @@ var app = function(app) {
             if (v.marlow.y < 5) {
                 v.marlow.y = 5;
             }
-            v.marlow.x += aX*3;
-            v.marlow.y += yX*3;
+            v.marlow.x += aX*100;
+            v.marlow.y += yX*100;
             // v.marlow.z += e.acceleration.z*3;
             stage.update();
         })

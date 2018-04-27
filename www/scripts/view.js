@@ -322,7 +322,6 @@ var app = function(app) {
 
         var layout5 = v.layout5 = new Layout(page5,[
             {object:content, marginTop:0},
-            // {object:footer, marginTop:5, maxWidth:90, minHeight:15}
         ], 5, "#7ACED6", null, new Shape(), stage);
         layoutManager.add(layout5);
 
