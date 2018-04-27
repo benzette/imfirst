@@ -44,7 +44,7 @@ var app = function(app) {
 
         frame.on("devicemotion", function (e) {
             v.marlow.x += e.acceleration.x*10;
-            // v.marlow.y += e.acceleration.y*10;
+            v.marlow.y += e.acceleration.z*10;
             stage.update();
 
         });
