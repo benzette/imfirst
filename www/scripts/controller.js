@@ -12,6 +12,16 @@ var app = function(app) {
             v.button1.selectedIndex = 0;
         });
 
+        v.button3.on("mousedown", function() {
+            p.go(v.page2);
+            v.button4.selectedIndex = 0;
+        });
+
+        v.button4.on("mousedown", function() {
+            p.go(v.page5);
+            v.button4.selectedIndex = 0;
+        });
+
         v.homeButton.on("mousedown", function() {
             p.go(v.page2);
             v.homeButton.selectedIndex = 2;
@@ -42,6 +52,8 @@ var app = function(app) {
             v.lvl3Button.selectedIndex = 4;
         });
 
+
+
         var aX = 0;
         var aY = 0;
 
@@ -50,7 +62,21 @@ var app = function(app) {
             aY = e.rotation.x;
         });
 
+        p.on("pagetransitioned", function(){
+            if (p.page == v.page5){
+                v.marlow.pos(stageW/2, 120, stage).sca(0.6);
+                zog("hello");
+                stage.update();
+            }
+        });
+
+        var itemSuccess = 0;
+        var hitCheck = false;
+
         Ticker.add(function(){
+            v.marlow.x += aX*0.6;
+            v.marlow.y += aY*0.6;
+
             if (v.marlow.x > stage.width-5) {
                 v.marlow.x = stage.width-5;
             }
@@ -63,9 +89,47 @@ var app = function(app) {
             if (v.marlow.y < 5) {
                 v.marlow.y = 5;
             }
-            v.marlow.x += aX*0.8;
-            v.marlow.y += aY*0.8;
-            // v.marlow.z += e.acceleration.z*3;
+
+            if (hitCheck) return;
+            if (!v.marlow.parent) return;
+
+           if (v.cactus1.hitTestRect(v.marlow)) {
+              zog("Ouch!")
+              // GO TO FAIL PAGE
+              hitCheck = true;
+              pages.go(v.page4);
+              v.marlow.removeFrom();
+           }
+           if (v.cactus2.hitTestRect(v.marlow)) {
+              zog("Ouch!")
+              hitCheck = true;
+              pages.go(v.page4);
+              v.marlow.removeFrom();
+           }
+           if (v.graham1.hitTestBounds(v.marlow)) {
+              zog("yum!")
+               v.graham1.removeFrom();
+              itemSuccess += 1;
+           }
+           if (v.graham2.hitTestRect(v.marlow)) {
+              zog("yum!")
+              v.graham2.removeFrom();
+              itemSuccess += 1;
+           }
+           if (v.chocolate.hitTestBounds(v.marlow)) {
+              zog("yum chocolate!")
+              v.chocolate.removeFrom();
+              // v.chocolate.alp(0);
+              itemSuccess += 1;
+           }
+           if (itemSuccess == 3) {
+               zog("Collection Success!")
+               // GO TO SUCCESS PAGE
+               hitCheck = true;
+               pages.go(v.page3);
+               v.marlow.removeFrom();
+           }
+
             stage.update();
         })
 

@@ -20,26 +20,6 @@ var app = function(app) {
         var content = new Container(500,500).addTo(page1);
         // put intro screen
 
-        var label = new Label({text:"100", align:"center", color:"white"}).center(content);
-
-       //  new Circle(100, "orange")
-       // .center(content)
-       // .drag();
-
-       // frame.on("deviceorientation", function (e) {
-       //     label.text = "x = "+decimals(e.rotation.x)+" y = "+decimals(e.rotation.y);
-       //     stage.update();
-       // });
-
-
-
-//
-// interval(50, function(obj){
-//     label.text = obj.count;
-//     stage.update();
-// })
-
-
         var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
         .pos(null, 10);
 
@@ -149,24 +129,6 @@ var app = function(app) {
         });
         v.lvl3Button.addTo(content).pos(330, 100);
 
-
-        // ~~~~~~~  FOOTER ~~~~~~~~~~~
-        // var label2 = v.label2 = new Label({
-        //    text:"Instructions",
-        //    size:10,
-        //    color:"white"
-        // });
-        //
-        // var footer = v.button2 = new Button({
-        //    label:label2,
-        //    width:100,
-        //    height:30,
-        //    color:"#7ACED6",
-        //    rollColor: "#0f616d",
-        //    corner:0
-        // });
-        // v.button2.addTo(page2);
-
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
 
         var layout2 = v.layout2 = new Layout(page2,[
@@ -184,71 +146,78 @@ var app = function(app) {
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page3);
-        var logo = new Label("MARLOW").center(header);
-
+        var success = new Label("SUCCESS!", null, null, "white").center(header);
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page3);
-        var circle = v.circle = new Circle(100, model.colors[0])
-            .center(content)
-            .cur();
-        circle.drag();
+        var marlowSmore = v.marlowSmore = frame.asset("marlow-smore.png")
+        .centerReg(content).pos(null, 250).sca(0.4);
 
         // ~~~~~~~  FOOTER ~~~~~~~~~~~
-        var footer = v.button3 = new Button(200, 50, "Next").addTo(page3);
-        footer.selectedIndex = 1;
+        var label3 = v.label3 = new Label({
+           text:"Ok",
+           size:14,
+           color:"white"
+        });
 
-                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
-                // var footer = v.tabs2 = new Tabs({
-                //     tabs:["home", "game"]
-                // }).addTo(page2);
-                // footer.selectedIndex = 1;
+        var footer = v.button3 = new Button({
+           label:label3,
+           width:100,
+           height:26,
+           color:"#7ACED6",
+           rollColor: "#0f616d",
+           corner:0
+        });
+        v.button3.addTo(page3);
+
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
-
         var layout3 = v.layout3 = new Layout(page3,[
-            {object:header, marginTop:5, backgroundColor:frame.yellow},
+            {object:header, marginTop:5, backgroundColor: "#0f616d"},
             {object:content, marginTop:5},
             {object:footer, marginTop:5, maxWidth:90, minHeight:15}
-        ], 5, frame.grey, null, new Shape(), stage);
+        ], 5, "#1b91a3", null, new Shape(), stage);
         layoutManager.add(layout3);
 
 //----------------------------------------------------------------------------//
 
         // PAGE 4 Fail
-
         var page4 = v.page4 = new Container();
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page4);
-        var logo = new Label("MARLOW").center(header);
-
+        var success = new Label("FAIL!", null, null, "white").center(header);
 
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page4);
-        var circle = v.circle = new Circle(100, model.colors[0])
-            .center(content)
-            .cur();
-        circle.drag();
+        var marlowFail = v.marlowFail = frame.asset("marlow-fail.png")
+        .centerReg(content).pos(null, 250).sca(0.4);
 
         // ~~~~~~~  FOOTER ~~~~~~~~~~~
-        var footer = v.button4 = new Button(200, 50, "Next").addTo(page4);
-        footer.selectedIndex = 1;
+        var label4 = v.label4 = new Label({
+           text:"Try Again",
+           size:14,
+           color:"white"
+        });
 
-                // // ~~~~~~~  FOOTER ~~~~~~~~~~~
-                // var footer = v.tabs2 = new Tabs({
-                //     tabs:["home", "game"]
-                // }).addTo(page2);
-                // footer.selectedIndex = 1;
+        var footer = v.button4 = new Button({
+           label:label4,
+           width:100,
+           height:26,
+           color:"#7ACED6",
+           rollColor: "#0f616d",
+           corner:0
+        });
+        v.button4.addTo(page4);
+
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
-
         var layout4 = v.layout4 = new Layout(page4,[
-            {object:header, marginTop:5, backgroundColor:frame.yellow},
+            {object:header, marginTop:5, backgroundColor: "#0f616d"},
             {object:content, marginTop:5},
             {object:footer, marginTop:5, maxWidth:90, minHeight:15}
-        ], 5, frame.grey, null, new Shape(), stage);
-        layoutManager.add(layout3);
+        ], 5, "#1b91a3", null, new Shape(), stage);
+        layoutManager.add(layout4);
 
 //----------------------------------------------------------------------------//
 
@@ -278,65 +247,20 @@ var app = function(app) {
         v.homeButton.addTo(header).pos(0, 0);
         // Hot to Cold Timer Bar
 
-
-
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
-        var content = new Container(500,500).addTo(page5);
+        var content = v.content = new Container(500,500).addTo(page5);
         var marlow = v.marlow = frame.asset("marlow.png")
-        .addTo(content).pos(50, 100).drag();
-        var cactus1 = frame.asset("cactus01med.png")
-        .center(content).pos(-50, 210).sca(0.7);
-        var cactus2 = frame.asset("cactus02med.png")
-        .center(content).pos(230, 430).sca(0.6);
-        var graham1 = frame.asset("graham.png")
+        .centerReg(content, null, false).pos(50, 100).drag();
+        var cactus1 = v.cactus1 = frame.asset("cactus01med.png")
+        .center(content).pos(-20, 210).sca(0.6);
+        var cactus2 = v.cactus2 = frame.asset("cactus02med.png")
+        .center(content).pos(230, 460).sca(0.5);
+        var graham1 = v.graham1 = frame.asset("graham.png")
         .addTo(content).pos(180, 770);
-        var graham2 = graham1.clone()
+        var graham2 = v.graham2 = graham1.clone()
         .addTo(content).pos(230, 640);
-        var chocolate = frame.asset("chocolate.png")
+        var chocolate = v.chocolate = frame.asset("chocolate.png")
         .addTo(content).pos(420, 630);
-
-        var itemSuccess = 0;
-        var hitCheck = false;
-
-        timeout(1000, function(){
-            zog(marlow.parent.y)
-        })
-
-        marlow.on("pressmove", function() {
-            if (hitCheck) return;
-
-           if (cactus1.hitTestRect(marlow)) {
-              zog("Ouch!")
-              // GO TO FAIL PAGE
-              hitCheck = true;
-              pages.go(v.page4);
-           }
-           if (cactus2.hitTestRect(marlow)) {
-              zog("Ouch!")
-              // GO TO FAIL PAGE
-              hitCheck = true;
-              pages.go(v.page4);
-           }
-           if (graham1.hitTestBounds(marlow)) {
-              zog("yum!")
-              graham1.alp(0);
-              itemSuccess += 1;
-           }
-           if (graham2.hitTestRect(marlow)) {
-              zog("yum!")
-              graham2.alp(0);
-              itemSuccess += 1;
-           }
-           if (chocolate.hitTestBounds(marlow)) {
-              zog("yum chocolate!")
-              chocolate.alp(0);
-              itemSuccess += 1;
-           }
-           if (itemSuccess == 3) {
-               zog("Collection Success!")
-               // GO TO SUCCESS PAGE
-           }
-        });
 
 
         // ~~~~~~~  LAYOUT ~~~~~~~~~~~
@@ -354,7 +278,6 @@ var app = function(app) {
 
         // ~~~~~~~  HEADER ~~~~~~~~~~~
         var header = new Container(500,100).addTo(page6);
-
 
         //Home Button
         var homeButtonLabel2 = v.homeButtonLabel.clone();
