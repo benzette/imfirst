@@ -20,12 +20,17 @@ var app = function(app) {
         var content = new Container(500,500).addTo(page1);
         // put intro screen
 
+        var label = new Label({text:"100", align:"center", color:"white"}).center(content);
 
         new Circle(100, "orange")
        .center(content)
        .drag();
 
-        // 
+       frame.on("devicemotion", function (e) {
+           label.text = "x = "+decimal(e.acceleration.x)+" y = "+decimal(e.acceleration.y);
+           stage.update();
+       });
+        //
         // var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
         // .pos(null, 10);
         //
