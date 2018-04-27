@@ -47,7 +47,7 @@ var app = function(app) {
 
         frame.on("devicemotion", function (e) {
             aX = e.acceleration.x;
-            aY = e.acceleration.y;
+            yX = e.acceleration.y;
         });
 
         Ticker.add(function(){
@@ -64,7 +64,7 @@ var app = function(app) {
                 v.marlow.y = 5;
             }
             v.marlow.x += aX*50;
-            v.marlow.y += aY*50;
+            v.marlow.y += yX*50;
             // v.marlow.z += e.acceleration.z*3;
             stage.update();
         })

@@ -19,24 +19,17 @@ var app = function(app) {
         // ~~~~~~~  CONTENT ~~~~~~~~~~~
         var content = new Container(500,500).addTo(page1);
         // put intro screen
+        var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
+        .pos(null, 10);
 
+        var instructionsDivider = new Rectangle(320, 4, "#0f616d")
+        .center(content)
+        .pos(null, 80);
 
-        new Circle(100, "orange")
-       .center(content)
-       .drag();
-
-        // 
-        // var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
-        // .pos(null, 10);
-        //
-        // var instructionsDivider = new Rectangle(320, 4, "#0f616d")
-        // .center(content)
-        // .pos(null, 80);
-        //
-        // var sentenceText = "Help Marlow the Marshmallow collect graham crackers and chocolate to become a S'more. Tilt the screen to avoid the cacti!";
-        // var instructions = new Label({text:sentenceText, size: 38, color:"#fff", lineWidth:380})
-        // .center(content)
-        // .pos(null, 120);
+        var sentenceText = "Help Marlow the Marshmallow collect graham crackers and chocolate to become a S'more. Tilt the screen to avoid the cacti!";
+        var instructions = new Label({text:sentenceText, size: 38, color:"#fff", lineWidth:380})
+        .center(content)
+        .pos(null, 120);
 
 
 
