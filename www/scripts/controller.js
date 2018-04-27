@@ -43,6 +43,19 @@ var app = function(app) {
         });
 
         frame.on("devicemotion", function (e) {
+
+            if (v.marlow.x > stage.width-5) {
+                v.marlow.x = stage.width-5;
+            }
+            if (v.marlow.x < 5) {
+                v.marlow.x = 5;
+            }
+            if (v.marlow.y > stage.width-5) {
+                v.marlow.y = stage.width-5;
+            }
+            if (v.marlow.y < 5) {
+                v.marlow.y = 5;
+            }
             v.marlow.x += e.acceleration.x*4;
             v.marlow.y += e.acceleration.y*4;
             // v.marlow.z += e.acceleration.z;
