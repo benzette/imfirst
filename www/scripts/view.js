@@ -27,17 +27,17 @@ var app = function(app) {
        .drag();
 
        frame.on("devicemotion", function (e) {
-           label.text = "x = "+decimal(e.acceleration.x)+" y = "+decimal(e.acceleration.y);
+           label.text = "x = "+decimals(e.acceleration.x)+" y = "+decimals(e.acceleration.y);
            stage.update();
        });
 
 
 
-
-interval(50, function(obj){
-    label.text = obj.count;
-    stage.update();
-})
+// 
+// interval(50, function(obj){
+//     label.text = obj.count;
+//     stage.update();
+// })
 
         //
         // var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
