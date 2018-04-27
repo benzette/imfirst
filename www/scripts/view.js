@@ -30,6 +30,15 @@ var app = function(app) {
            label.text = "x = "+decimal(e.acceleration.x)+" y = "+decimal(e.acceleration.y);
            stage.update();
        });
+
+
+
+
+interval(50, function(obj){
+    label.text = obj.count;
+    stage.update();
+})
+
         //
         // var instructionsTitle = new Label("Instructions", 54, null, "white").center(content)
         // .pos(null, 10);
