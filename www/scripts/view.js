@@ -27,7 +27,7 @@ var app = function(app) {
         .center(content)
         .pos(null, 80);
 
-        var sentenceText = "Help Marlow the Marshmallow collect graham crackers and chocolate to become a S'more. Tilt the screen to avoid the cacti!";
+        var sentenceText = "Help Marlow the Marshmallow collect graham crackers and chocolate to become a S'more. Start flat and tilt the screen to avoid the cacti!";
         var instructions = new Label({text:sentenceText, size: 38, color:"#fff", lineWidth:380})
         .center(content)
         .pos(null, 120);
